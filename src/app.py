@@ -9,10 +9,13 @@ import dash_html_components as html
 import dash_table
 
 import pandas as pd
-from sankey import prepare_data_for_sankey, make_sankey
+from src.sankey import prepare_data_for_sankey, make_sankey
 
 external_stylesheets = ['https://codepen.io/ziscore/pen/NWxVaxy.css', 'https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+# server for gunicorn
+server = app.server
 
 app.layout = html.Div([
     html.H1("Sarayu: Chat Insights"),
