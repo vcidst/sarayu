@@ -19,13 +19,13 @@ server = app.server
 
 # SAMPLE CONSTANT
 MAX_SAMPLES = 150
-app.title = 'Sarayu: Chat Insights for Verloop'
+app.title = 'Sarayū: Chat Insights for Verloop'
 
 app.layout = html.Div([
-    html.H1("Sarayu: Chat Insights"),
+    html.H1("Sarayū: Chat Insights"),
     html.P([
         "Works with ", 
-        html.A("Verloop", href = "https://verloop.io"),
+        html.A("Verloop", href = "https://verloop.io", target="_blank"),
         " Reports. In this demo for Verloop Hackathon, Sarayu randomly samples ~100 rows from the reports for analysis. ",
         html.P([
             "Get some sample reports from ", 
