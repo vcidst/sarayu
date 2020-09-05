@@ -23,8 +23,22 @@ app.title = 'Sarayu: Chat Insights for Verloop'
 
 app.layout = html.Div([
     html.H1("Sarayu: Chat Insights"),
-    html.P(["Works with ", html.A("Verloop", href = "https://verloop.io")," Reports. \
-    In this demo for Verloop Hackathon, Sarayu randomly samples ~100 rows from the reports for analysis"], className="leadin"),
+    html.P([
+        "Works with ", 
+        html.A("Verloop", href = "https://verloop.io"),
+        " Reports. In this demo for Verloop Hackathon, Sarayu randomly samples ~100 rows from the reports for analysis. ",
+        html.P([
+            "Get some sample reports from ", 
+            html.A("here", href="https://drive.google.com/drive/folders/1ATqCCV0Z76H_dO-e5F9NmuJyZx4bwQ75?usp=sharing", target="_blank")
+            ], style={
+                'color': '#343434',
+                'line-height': '20px',
+                'letter-spacing': '2px',
+                'font-weight': 'bold',
+                'margin-top': '20px'
+            }
+        )
+    ], className="leadin"),
     dcc.Upload(
         id='upload-data',
         children=html.Div([
