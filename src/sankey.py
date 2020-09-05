@@ -81,7 +81,7 @@ def prepare_data_for_sankey(flow, dropoffs = False):
     links_cleanup = links.query("TargetInt != -1")
     return block_labels, links_cleanup
 
-def make_sankey(blocks, links, title, width, height, font_size):
+def make_sankey(blocks, links, title, font_size):
     fig = go.Figure(data=[go.Sankey(
         node = dict(
             pad = 15,
@@ -98,5 +98,5 @@ def make_sankey(blocks, links, title, width, height, font_size):
         )
     )])
 
-    fig.update_layout(title_text=title, autosize=False, width=width, height=height, font_size=font_size)
+    fig.update_layout(title_text=title, autosize=False, font_size=font_size)
     return fig

@@ -11,7 +11,7 @@ import dash_table
 import pandas as pd
 from src.sankey import prepare_data_for_sankey, make_sankey
 
-external_stylesheets = ['https://codepen.io/ziscore/pen/YzqEmRo.css', 'https://codepen.io/chriddyp/pen/bWLwgP.css']
+external_stylesheets = ['https://codepen.io/ziscore/pen/jOqagow.css', 'https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 # server for gunicorn
@@ -40,7 +40,7 @@ app.layout = html.Div([
         },
         max_size=-1
     ),
-    dcc.Graph(id='sankey')
+    dcc.Graph(id='sankey', style={'width': '96vw', 'height': '100vh'})
 ])
 
 
@@ -109,13 +109,11 @@ def update_output(contents, filename):
             blocks=blocks, 
             links=links,
             title=filename,
-            width=2000,
-            height=1200,
             font_size=14
         )
         return fig
     
-    return error_graph("Please upload a file to see something here")
+    return error_graph("Upload a file to see something here")
 
 if __name__ == '__main__':
     app.run_server(debug=True)
