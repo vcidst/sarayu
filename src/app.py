@@ -24,9 +24,10 @@ app.title = 'Sarayū: Chat Insights for Verloop'
 app.layout = html.Div([
     html.H1("Sarayū: Chat Insights"),
     html.P([
-        "Works with ", 
+        "Upload a ", 
         html.A("Verloop", href = "https://verloop.io", target="_blank"),
-        " Reports. In this demo for Verloop Hackathon, Sarayu randomly samples ~100 rows from the reports for analysis. ",
+        " Report to get started. Due to resource constraints \
+            Sarayu currently randomly samples ~100 rows from the reports for analysis. ",
         html.P([
             "Get some sample reports from ", 
             html.A("here", href="https://drive.google.com/drive/folders/1ATqCCV0Z76H_dO-e5F9NmuJyZx4bwQ75?usp=sharing", target="_blank")
@@ -42,8 +43,8 @@ app.layout = html.Div([
     dcc.Upload(
         id='upload-data',
         children=html.Div([
-            'Drag and Drop or ',
-            html.A('Select Files')
+            'Drag & drop here or ',
+            html.A('Select a file'), ' for upload'
         ]),
         style={
             'width': '600px',
