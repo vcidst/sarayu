@@ -8,6 +8,8 @@ This is a submission for,
 Verloop Hackathon - Sept 2020
 Team Lunar Void, Shailendra Paliwal and Udit Agarwal
 
+Link to the Hackathon Demo slides with screenshot 
+[slides](https://github.com/vcidst/sarayu/blob/main/assets/Sarayu%20Visualize%20Chats.pdf)
 
 ### Install
 
