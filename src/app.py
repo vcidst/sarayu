@@ -24,7 +24,7 @@ app.title = 'Sarayū: Chat Insights'
 app.layout = html.Div([
     html.H1("Sarayū: Chat Insights"),
     html.P([
-        "This is not a general purpose tool it is meant to be used with a specific format of chat reports. This server currently samples ~100 rows from dataframe for faster processing",
+        "Visualize your chat reports with a Sankey Diagram. It currently expects a `RecipeFlow` column in csv file with `tag1 -> tag2 -> tag3` structure. Due to resource constraints Sarayu currently randomly samples ~100 rows from the reports for analysis.",
     ], className="leadin"),
     dcc.Upload(
         id='upload-data',
