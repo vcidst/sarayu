@@ -19,26 +19,12 @@ server = app.server
 
 # SAMPLE CONSTANT
 MAX_SAMPLES = 150
-app.title = 'Sarayū: Chat Insights for Verloop'
+app.title = 'Sarayū: Chat Insights'
 
 app.layout = html.Div([
     html.H1("Sarayū: Chat Insights"),
     html.P([
-        "Upload a ", 
-        html.A("Verloop", href = "https://verloop.io", target="_blank"),
-        " Report to get started. Due to resource constraints \
-            Sarayu currently randomly samples ~100 rows from the reports for analysis. ",
-        html.P([
-            "Get some sample reports from ", 
-            html.A("here", href="https://drive.google.com/drive/folders/1ATqCCV0Z76H_dO-e5F9NmuJyZx4bwQ75?usp=sharing", target="_blank")
-            ], style={
-                'color': '#343434',
-                'line-height': '20px',
-                'letter-spacing': '2px',
-                'font-weight': 'bold',
-                'margin-top': '20px'
-            }
-        )
+        "This is not a general purpose tool it is meant to be used with a specific format of chat reports. This server currently samples ~100 rows from dataframe for faster processing",
     ], className="leadin"),
     dcc.Upload(
         id='upload-data',
@@ -113,7 +99,7 @@ def update_output(contents, filename):
             return error_graph(er)
         
         try:
-            blocks, links = prepare_data_for_sankey(flow, dropoffs=True)
+            blocks, links = prepare_data_for_sankey(flow, dropoffs=False)
         except KeyError:
             er = f"The file you uploaded doesn't have the column 'RecipeFlow'. Try again with a different file?"
             return error_graph(er)
